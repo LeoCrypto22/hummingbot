@@ -25,17 +25,17 @@ class TriangularArbitrage(ScriptStrategyBase):
     - It always starts trades round by selling the holding asset and ends by buying it.
     - There are 2 possible arbitrage trades directions: "direct" and "reverse".
         Example with USDT holding asset:
-        1. Direct: buy ADA-USDT > sell ADA-BTC > sell BTC-USDT
-        2. Reverse: buy BTC-USDT > buy ADA-BTC > sell ADA-USDT
+        1. Direct: buy SOL-USDT > sell SOL-BTC > sell BTC-USDT
+        2. Reverse: buy BTC-USDT > buy SOL-BTC > sell SOL-USDT
     - The order amount is fixed and set in holding asset
     - The strategy has 2nd and 3d orders creation check and makes several trials if there is a failure
     - Profit is calculated each round and total profit is checked for the kill_switch to prevent from excessive losses
     - !!! Profitability calculation doesn't take into account trading fees, set min_profitability to at least 3 * fee
     """
     # Config params
-    connector_name: str = "kucoin"
-    first_pair: str = "ADA-USDT"
-    second_pair: str = "ADA-BTC"
+    connector_name: str = "binance"
+    first_pair: str = "SOL-USDT"
+    second_pair: str = "SOL-BTC"
     third_pair: str = "BTC-USDT"
     holding_asset: str = "USDT"
 
